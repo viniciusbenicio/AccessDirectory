@@ -6,23 +6,7 @@ namespace AccessDirectory
     {
         public const string PATH_TEMP = @"C:\temp";
 
-        public string AcessPathTemp()
-        {
-            if (Directory.Exists(PATH_TEMP))
-            {
-                string[] archives = Directory.GetFiles(PATH_TEMP);
-                Console.WriteLine("Archives: ");
-
-                foreach(string archive in archives)
-                {
-                    Console.WriteLine(archive);
-                }
-            }
-
-            ExecuteCloneCommand();
-            return "";
-        }
-
+        
         public void ExecuteCloneCommand()
         {
             string urlRepositorio = "https://github.com/viniciusbenicio/BoilerplateCleanArch";
@@ -47,6 +31,23 @@ namespace AccessDirectory
             }
 
 
+        }
+
+        public string[] listDirectory()
+        {
+            var archives = Array.Empty<string>();
+            if (Directory.Exists(PATH_TEMP))
+            {
+                archives = Directory.GetFiles(PATH_TEMP);
+                Console.WriteLine("Archives: ");
+
+                foreach (string archive in archives)
+                {
+                    Console.WriteLine(archive);
+                }
+            }
+
+            return archives;
         }
 
     }
