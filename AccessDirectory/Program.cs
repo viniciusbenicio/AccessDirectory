@@ -8,7 +8,7 @@ public class Program
 
         DirectoryPath dir = new DirectoryPath();
 
-        dir.acessPathTemp();
+        dir.AcessPathTemp();
        
     }
 }
